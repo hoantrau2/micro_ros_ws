@@ -1,0 +1,63 @@
+[0.650s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/nvhmh/micro_ros_ws']
+[0.650s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/nvhmh/micro_ros_ws'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fe37775aa70>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7fe37760b2b0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7fe37760b2b0>>)
+[0.708s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.708s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.708s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.708s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.708s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.708s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/nvhmh/micro_ros_ws'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['ignore', 'ignore_ament_install']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'ignore'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'ignore_ament_install'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['colcon_pkg']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'colcon_pkg'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['colcon_meta']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'colcon_meta'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['ros']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'ros'
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['cmake', 'python']
+[0.729s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'cmake'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'python'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extensions ['python_setup_py']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws) by extension 'python_setup_py'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/log) by extensions ['ignore', 'ignore_ament_install']
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/log) by extension 'ignore'
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/log) ignored
+[0.730s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['ignore', 'ignore_ament_install']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'ignore'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'ignore_ament_install'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['colcon_pkg']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'colcon_pkg'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['colcon_meta']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'colcon_meta'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['ros']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'ros'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['cmake', 'python']
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'cmake'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'python'
+[0.731s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extensions ['python_setup_py']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src) by extension 'python_setup_py'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extensions ['ignore', 'ignore_ament_install']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extension 'ignore'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extension 'ignore_ament_install'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extensions ['colcon_pkg']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extension 'colcon_pkg'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extensions ['colcon_meta']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extension 'colcon_meta'
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extensions ['ros']
+[0.732s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk) by extension 'ros'
+[0.736s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nvhmh/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk' with type 'ros.catkin' and name 'micro_ros_raspberrypicosdk'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extensions ['ignore', 'ignore_ament_install']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'ignore'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'ignore_ament_install'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extensions ['colcon_pkg']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'colcon_pkg'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extensions ['colcon_meta']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'colcon_meta'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extensions ['ros']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'ros'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extensions ['cmake', 'python']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'cmake'
+[1.326s] Level 1:colcon.colcon_core.package_identification:_identify(/home/nvhmh/micro_ros_ws/src/pico-sdk) by extension 'python'
+[1.327s] DEBUG:colcon.colcon_core.package_identification:Package '/home/nvhmh/micro_ros_ws/src/pico-sdk' with type 'cmake' and name 'pico_sdk'
+[1.327s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
