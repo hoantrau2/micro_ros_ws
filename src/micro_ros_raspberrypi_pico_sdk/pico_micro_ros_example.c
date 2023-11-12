@@ -91,3 +91,4 @@ int main()
 // export ROS_DOMAIN_ID=0
 // snap interface serial-port
 // snap connect micro-ros-agent:serial-port snapd:pico
+// sudo micro-ros-agent serial --dev /dev/ttyACM0 baudrate=115200
