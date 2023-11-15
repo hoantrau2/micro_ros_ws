@@ -27,7 +27,7 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time) //last_call_time
 
 }
 
-int main()
+int main1hehe()
 {
     rmw_uros_set_custom_transport(
 		true,
