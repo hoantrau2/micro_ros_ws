@@ -11,8 +11,8 @@ void usleep(uint64_t us)
 int clock_gettime(clockid_t unused, struct timespec *tp)
 {
     uint64_t m = time_us_64();
-    tp->tv_sec = m / 1000000; //converts divisible part to seconds
-    tp->tv_nsec = (m % 1000000) * 1000; //converts residual part to mili second
+    tp->tv_sec = m / 1000000;
+    tp->tv_nsec = (m % 1000000) * 1000;
     return 0;
 }
 
@@ -52,8 +52,8 @@ size_t pico_serial_transport_read(struct uxrCustomTransport * transport, uint8_t
             return i;
         }
 
-        int character = getchar_timeout_us(elapsed_time_us);//elapsed_time_us: This is the remaining time to read characters from stdin (standard input).
-        if (character == PICO_ERROR_TIMEOUT) // we can see, if buf[i] stucked, the remaing data below will not be read
+        int character = getchar_timeout_us(elapsed_time_us);
+        if (character == PICO_ERROR_TIMEOUT)
         {
             *errcode = 1;
             return i;

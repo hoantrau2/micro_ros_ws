@@ -14,7 +14,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/Float64 in the package std_msgs.

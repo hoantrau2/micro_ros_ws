@@ -14,7 +14,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Struct defined in msg/StatisticDataPoint in the package statistics_msgs.

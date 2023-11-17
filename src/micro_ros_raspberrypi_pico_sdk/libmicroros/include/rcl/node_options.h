@@ -23,9 +23,9 @@ extern "C"
 #endif
 
 #include "rcl/allocator.h"
-#ifdef RCL_COMMAND_LINE_ENABLED
+#ifdef RCL_MICROROS_COMPLETE_IMPL
 #include "rcl/arguments.h"
-#endif // RCL_COMMAND_LINE_ENABLED
+#endif // RCL_MICROROS_COMPLETE_IMPL
 #include "rcl/macros.h"
 
 #include "rcl/domain_id.h"
@@ -49,16 +49,19 @@ typedef struct rcl_node_options_s
   /// If false then only use arguments in this struct, otherwise use global arguments also.
   bool use_global_arguments;
 
-#ifdef RCL_COMMAND_LINE_ENABLED
+#ifdef RCL_MICROROS_COMPLETE_IMPL
   /// Command line arguments that apply only to this node.
   rcl_arguments_t arguments;
-#endif // RCL_COMMAND_LINE_ENABLED
+#endif // RCL_MICROROS_COMPLETE_IMPL
 
   /// Flag to enable rosout for this node
   bool enable_rosout;
 
   /// Middleware quality of service settings for /rosout.
   rmw_qos_profile_t rosout_qos;
+
+  /// Deprecated: this feature is to be enabled via parameters in rclcpp and rclpy.
+  bool enable_type_description_service;
 } rcl_node_options_t;
 
 /// Return the default node options in a rcl_node_options_t.

@@ -106,6 +106,7 @@ extern "C"
 #include "rmw/message_sequence.h"
 #include "rmw/publisher_options.h"
 #include "rmw/qos_profiles.h"
+#include "rmw/dynamic_message_type_support.h"
 #include "rmw/subscription_options.h"
 #include "rmw/types.h"
 #include "rmw/visibility_control.h"
@@ -2425,6 +2426,7 @@ rmw_take_request(
  * \return `RMW_RET_INVALID_ARGUMENT` if `ros_response` is NULL, or
  * \return `RMW_RET_INCORRECT_RMW_IMPLEMENTATION` if the `service`
  *   implementation identifier does not match this implementation, or
+ * \return `RMW_RET_TIMEOUT` if a response reader is not ready yet, or
  * \return `RMW_RET_ERROR` if an unexpected error occurs.
  */
 RMW_PUBLIC
@@ -2937,7 +2939,109 @@ rmw_count_subscribers(
   const char * topic_name,
   size_t * count);
 
-/// Get the unique identifier (gid) of a publisher.
+/// Count the number of known clients matching a service name.
+/**
+ * This function returns the numbers of clients of a given service in the ROS graph,
+ * as discovered so far by the given node.
+ *
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | Yes
+ * Uses Atomics       | Maybe [1]
+ * Lock-Free          | Maybe [1]
+ * <i>[1] implementation defined, check the implementation documentation</i>
+ *
+ * \par Runtime behavior
+ *   To query the ROS graph is a synchronous operation.
+ *   It is also non-blocking, but it is not guaranteed to be lock-free.
+ *   Generally speaking, implementations may synchronize access to internal resources using
+ *   locks but are not allowed to wait for events with no guaranteed time bound (barring
+ *   the effects of starvation due to OS scheduling).
+ *
+ * \par Thread-safety
+ *   Nodes are thread-safe objects, and so are all operations on them except for finalization.
+ *   Therefore, it is safe to query the ROS graph using the same node concurrently.
+ *   However, access to primitive data-type arguments is not synchronized.
+ *   It is not safe to read or write `service_name` or `count` while rmw_count_clients()
+ *   uses them.
+ *
+ * \pre Given `node` must be a valid node handle, as returned by rmw_create_node().
+ *
+ * \param[in] node Handle to node to use to query the ROS graph.
+ * \param[in] service_name Fully qualified ROS topic name.
+ * \param[out] count Number of clients matching the given topic name.
+ * \return `RMW_RET_OK` if the query was successful, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `node` is NULL, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `service_name` is NULL, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `service_name` is not a fully qualified topic name,
+ *   by rmw_validate_full_topic_name() definition, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `count` is NULL, or
+ * \return `RMW_RET_INCORRECT_RMW_IMPLEMENTATION` if the `node` implementation
+ *   identifier does not match this implementation, or
+ * \return `RMW_RET_ERROR` if an unspecified error occurs.
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_count_clients(
+  const rmw_node_t * node,
+  const char * service_name,
+  size_t * count);
+
+/// Count the number of known servers matching a service name.
+/**
+ * This function returns the numbers of servers of a given service in the ROS graph,
+ * as discovered so far by the given node.
+ *
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | Yes
+ * Uses Atomics       | Maybe [1]
+ * Lock-Free          | Maybe [1]
+ * <i>[1] implementation defined, check the implementation documentation</i>
+ *
+ * \par Runtime behavior
+ *   To query the ROS graph is a synchronous operation.
+ *   It is also non-blocking, but it is not guaranteed to be lock-free.
+ *   Generally speaking, implementations may synchronize access to internal resources using
+ *   locks but are not allowed to wait for events with no guaranteed time bound (barring
+ *   the effects of starvation due to OS scheduling).
+ *
+ * \par Thread-safety
+ *   Nodes are thread-safe objects, and so are all operations on them except for finalization.
+ *   Therefore, it is safe to query the ROS graph using the same node concurrently.
+ *   However, access to primitive data-type arguments is not synchronized.
+ *   It is not safe to read or write `service_name` or `count` while rmw_count_services()
+ *   uses them.
+ *
+ * \pre Given `node` must be a valid node handle, as returned by rmw_create_node().
+ *
+ * \param[in] node Handle to node to use to query the ROS graph.
+ * \param[in] service_name Fully qualified ROS topic name.
+ * \param[out] count Number of services matching the given topic name.
+ * \return `RMW_RET_OK` if the query was successful, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `node` is NULL, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `service_name` is NULL, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `service_name` is not a fully qualified service name,
+ *   by rmw_validate_full_topic_name() definition, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `count` is NULL, or
+ * \return `RMW_RET_INCORRECT_RMW_IMPLEMENTATION` if the `node` implementation
+ *   identifier does not match this implementation, or
+ * \return `RMW_RET_ERROR` if an unspecified error occurs.
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_count_services(
+  const rmw_node_t * node,
+  const char * service_name,
+  size_t * count);
+
+/// Get the globally unique identifier (GID) of a publisher.
 /**
  * <hr>
  * Attribute          | Adherence
@@ -2953,12 +3057,16 @@ rmw_count_subscribers(
  *   Publishers are thread-safe objects, and so are all operations on them except for
  *   finalization.
  *   Therefore, it is safe to get the unique identifier from the same publisher concurrently.
- *   However, access to the gid is not synchronized.
+ *   However, access to the GID is not synchronized.
  *   It is not safe to read or write `gid` while rmw_get_gid_for_publisher() uses it.
  *
  * \pre Given `publisher` must be a valid publisher, as returned by rmw_create_publisher().
  *
- * \param[in] publisher Publisher to get a gid from.
+ * This is expected to be globally unique within a ROS domain.
+ * The identifier should be the same when reported both locally (where the entity was created)
+ * and on remote hosts or processes.
+ *
+ * \param[in] publisher Publisher to get a GID from.
  * \param[out] gid Publisher's unique identifier, populated on success
  *   but left unchanged on failure.
  * \return `RMW_RET_OK` if successful, or
@@ -2973,7 +3081,46 @@ RMW_WARN_UNUSED
 rmw_ret_t
 rmw_get_gid_for_publisher(const rmw_publisher_t * publisher, rmw_gid_t * gid);
 
-/// Check if two unique identifiers (gids) are equal.
+/// Get the globally unique identifier (GID) of a service client.
+/**
+ * <hr>
+ * Attribute          | Adherence
+ * ------------------ | -------------
+ * Allocates Memory   | No
+ * Thread-Safe        | Yes
+ * Uses Atomics       | Maybe [1]
+ * Lock-Free          | Maybe [1]
+ *
+ * <i>[1] implementation defined, check implementation documentation.</i>
+ *
+ * \par Thread-safety
+ *   Service clients are thread-safe objects, and so are all operations on them except for
+ *   finalization.
+ *   Therefore, it is safe to get the unique identifier from the same client concurrently.
+ *   However, access to the GID is not synchronized.
+ *   It is not safe to read or write `gid` while rmw_get_gid_for_client() uses it.
+ *
+ * \pre Given `client` must be a valid service client, as returned by rmw_create_client().
+ *
+ * This is expected to be globally unique within a ROS domain.
+ * The identifier should be the same when reported both locally (where the entity was created)
+ * and on remote hosts or processes.
+ * \param[in] client Service client to get a GID from.
+ * \param[out] gid Service client's unique identifier, populated on success
+ *   but left unchanged on failure.
+ * \return `RMW_RET_OK` if successful, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `publisher` is NULL, or
+ * \return `RMW_RET_INVALID_ARGUMENT` if `gid` is NULL, or
+ * \return `RMW_RET_INCORRECT_RMW_IMPLEMENTATION` if the `client` implementation
+ *   identifier does not match this implementation, or
+ * \return `RMW_RET_ERROR` if an unspecified error occurs.
+ */
+RMW_PUBLIC
+RMW_WARN_UNUSED
+rmw_ret_t
+rmw_get_gid_for_client(const rmw_client_t * client, rmw_gid_t * gid);
+
+/// Check if two globally unique identifiers (GIDs) are equal.
 /**
  * <hr>
  * Attribute          | Adherence
@@ -2987,14 +3134,14 @@ rmw_get_gid_for_publisher(const rmw_publisher_t * publisher, rmw_gid_t * gid);
  *
  * \par Thread-safety
  *   Unique identifier comparison is a reentrant function, but:
- *   - Access to both gids is read-only but it is not synchronized.
+ *   - Access to both GIDs is read-only but it is not synchronized.
  *     Concurrent `gid1` and `gid2` reads are safe, but concurrent reads and writes are not.
  *   - Access to primitive data-type arguments is not synchronized.
  *     It is not safe to read or write `result` while rmw_compare_gids_equal() uses it.
  *
  * \param[in] gid1 First unique identifier to compare.
  * \param[in] gid2 Second unique identifier to compare.
- * \param[out] result true if both gids are equal, false otherwise.
+ * \param[out] result true if both GIDs are equal, false otherwise.
  * \return `RMW_RET_OK` if successful, or
  * \return `RMW_RET_INVALID_ARGUMENT` if `gid1` or `gid2` is NULL, or
  * \return `RMW_RET_INCORRECT_RMW_IMPLEMENTATION` if the implementation

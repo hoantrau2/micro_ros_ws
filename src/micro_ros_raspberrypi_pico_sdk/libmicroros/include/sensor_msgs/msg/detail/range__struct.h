@@ -14,7 +14,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Constant 'ULTRASOUND'.
@@ -77,6 +76,9 @@ typedef struct sensor_msgs__msg__Range
   /// +Inf represents no detection within the fixed distance.
   /// (Object out of range)
   float range;
+  /// variance of the range sensor
+  /// 0 is interpreted as variance unknown
+  float variance;
 } sensor_msgs__msg__Range;
 
 // Struct for a sequence of sensor_msgs__msg__Range.

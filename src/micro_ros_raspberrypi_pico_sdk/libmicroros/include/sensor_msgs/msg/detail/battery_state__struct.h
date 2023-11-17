@@ -14,7 +14,6 @@ extern "C"
 #include <stddef.h>
 #include <stdint.h>
 
-
 // Constants defined in the message
 
 /// Constant 'POWER_SUPPLY_STATUS_UNKNOWN'.
@@ -114,6 +113,7 @@ enum
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_UNKNOWN'.
 /**
   * Power supply technology (chemistry) constants
+  * Unknown battery technology
  */
 enum
 {
@@ -121,39 +121,75 @@ enum
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_NIMH'.
+/**
+  * Nickel-Metal Hydride battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_NIMH = 1
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_LION'.
+/**
+  * Lithium-ion battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LION = 2
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_LIPO'.
+/**
+  * Lithium Polymer battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LIPO = 3
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_LIFE'.
+/**
+  * Lithium Iron Phosphate battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LIFE = 4
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_NICD'.
+/**
+  * Nickel-Cadmium battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_NICD = 5
 };
 
 /// Constant 'POWER_SUPPLY_TECHNOLOGY_LIMN'.
+/**
+  * Lithium Manganese Dioxide battery
+ */
 enum
 {
   sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_LIMN = 6
+};
+
+/// Constant 'POWER_SUPPLY_TECHNOLOGY_TERNARY'.
+/**
+  * Ternary Lithium battery
+ */
+enum
+{
+  sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_TERNARY = 7
+};
+
+/// Constant 'POWER_SUPPLY_TECHNOLOGY_VRLA'.
+/**
+  * Valve Regulated Lead-Acid battery
+ */
+enum
+{
+  sensor_msgs__msg__BatteryState__POWER_SUPPLY_TECHNOLOGY_VRLA = 8
 };
 
 // Include directives for member types

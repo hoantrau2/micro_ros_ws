@@ -24,6 +24,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// This is to avoid compilation warnings in C++ with '-Wold-style-cast'.
+#ifdef __cplusplus
+  #define RCUTILS_CAST_DURATION(x) (static_cast < rcutils_duration_value_t > (x))
+#else
+  #define RCUTILS_CAST_DURATION(x) ((rcutils_duration_value_t)x)
+#endif
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -69,7 +76,7 @@ extern "C"
     static rcutils_log_location_t __rcutils_logging_location = {__func__, __FILE__, __LINE__}; \
     if (rcutils_logging_logger_is_enabled_for(name, severity)) { \
       condition_before \
-      rcutils_log(&__rcutils_logging_location, severity, name, __VA_ARGS__); \
+      rcutils_log_internal(&__rcutils_logging_location, severity, name, __VA_ARGS__); \
       condition_after \
     } \
   } while (0)
@@ -174,7 +181,7 @@ typedef bool (* RclLogFilter)();
  * A macro initializing and checking the `throttle` condition.
  */
 #define RCUTILS_LOG_CONDITION_THROTTLE_BEFORE(get_time_point_value, duration) { \
-    static rcutils_duration_value_t __rcutils_logging_duration = RCUTILS_MS_TO_NS((rcutils_duration_value_t)duration); \
+    static rcutils_duration_value_t __rcutils_logging_duration = RCUTILS_MS_TO_NS(RCUTILS_CAST_DURATION(duration)); \
     static rcutils_time_point_value_t __rcutils_logging_last_logged = 0; \
     rcutils_time_point_value_t __rcutils_logging_now = 0; \
     bool __rcutils_logging_condition = true; \
