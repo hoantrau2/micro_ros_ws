@@ -214,6 +214,7 @@ CMakeFiles/pico_micro_ros_example.dir/pico_micro_ros_example.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/timing.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/custom_transport.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/bbb_library_struct.h \
  /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
  /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico.h \
  /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \

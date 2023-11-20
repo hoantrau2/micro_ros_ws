@@ -3694,9 +3694,9 @@ Discarded input sections
  .comment       0x0000000000000000       0x34 /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librmw-topic_endpoint_info.c.obj)
  .ARM.attributes
                 0x0000000000000000       0x2b /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librmw-topic_endpoint_info.c.obj)
- .text          0x0000000000000000        0x0 /tmp/ccuqqQxB.o
- .data          0x0000000000000000        0x0 /tmp/ccuqqQxB.o
- .bss           0x0000000000000000        0x0 /tmp/ccuqqQxB.o
+ .text          0x0000000000000000        0x0 /tmp/ccMpL7GL.o
+ .data          0x0000000000000000        0x0 /tmp/ccMpL7GL.o
+ .bss           0x0000000000000000        0x0 /tmp/ccMpL7GL.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -3905,7 +3905,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /tmp/ccuqqQxB.o
+ .boot2         0x0000000010000000      0x100 /tmp/ccMpL7GL.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -6852,7 +6852,7 @@ LOAD CMakeFiles/pico_micro_ros_example.dir/home/ngochoan/micro_ros_ws/src/pico-s
 LOAD CMakeFiles/pico_micro_ros_example.dir/home/ngochoan/micro_ros_ws/src/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/pico_micro_ros_example.dir/home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a
-LOAD /tmp/ccuqqQxB.o
+LOAD /tmp/ccMpL7GL.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -7212,7 +7212,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000001c3d       0x2b /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librmw_microxrcedds-rmw_trigger_guard_condition.c.obj)
  .ARM.attributes
-                0x0000000000001c68       0x22 /tmp/ccuqqQxB.o
+                0x0000000000001c68       0x22 /tmp/ccMpL7GL.o
  .ARM.attributes
                 0x0000000000001c8a       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
