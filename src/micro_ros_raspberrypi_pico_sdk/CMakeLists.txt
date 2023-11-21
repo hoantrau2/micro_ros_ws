@@ -20,6 +20,7 @@ target_link_libraries(pico_micro_ros_example
 
 target_include_directories(pico_micro_ros_example PUBLIC
     libmicroros/include
+    
 )
 
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")

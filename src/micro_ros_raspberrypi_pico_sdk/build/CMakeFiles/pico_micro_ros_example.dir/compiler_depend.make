@@ -3022,7 +3022,6 @@ CMakeFiles/pico_micro_ros_example.dir/pico_micro_ros_example.c.obj: ../pico_micr
   ../libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
   ../libmicroros/include/rmw_microros/timing.h \
   ../libmicroros/include/rmw_microros/custom_transport.h \
-  ../bbb_library_struct.h \
   /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
   /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico.h \
   /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \
@@ -3236,8 +3235,6 @@ CMakeFiles/pico_micro_ros_example.dir/pico_uart_transport.c.obj: ../pico_uart_tr
 ../libmicroros/include/rcl/error_handling.h:
 
 ../libmicroros/include/rcl/event.h:
-
-../bbb_library_struct.h:
 
 ../libmicroros/include/rmw/qos_profiles.h:
 
