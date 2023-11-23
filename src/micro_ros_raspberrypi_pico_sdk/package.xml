@@ -3,7 +3,7 @@
 <package format="3">
   <name>micro_ros_raspberrypicosdk</name>
   <version>4.1.0</version>
-  <description>micro-ROS tools for Raspberry Pico SDK</description>
-  <maintainer email="pablogarrido@eprosima.com">Pablo Garrido</maintainer>
+  <description>micro-ROS tools for Jetson nano</description>
+  <maintainer email="hoan.duongmybk852002@hcmut.edu.vn">ngochoan</maintainer>
   <license>Apache License 2.0</license>
 </package>
