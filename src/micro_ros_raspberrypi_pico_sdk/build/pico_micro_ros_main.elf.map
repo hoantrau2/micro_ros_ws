@@ -441,6 +441,7 @@ Discarded input sections
  .text          0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
+ .text.cleanup  0x0000000000000000       0x18 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
  .text          0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_uart_transport.c.obj
  .data          0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_uart_transport.c.obj
  .bss           0x0000000000000000        0x0 CMakeFiles/pico_micro_ros_main.dir/pico_uart_transport.c.obj
@@ -3971,9 +3972,9 @@ Discarded input sections
  .comment       0x0000000000000000       0x34 /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librmw-topic_endpoint_info.c.obj)
  .ARM.attributes
                 0x0000000000000000       0x2b /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librmw-topic_endpoint_info.c.obj)
- .text          0x0000000000000000        0x0 /tmp/ccy2JFFN.o
- .data          0x0000000000000000        0x0 /tmp/ccy2JFFN.o
- .bss           0x0000000000000000        0x0 /tmp/ccy2JFFN.o
+ .text          0x0000000000000000        0x0 /tmp/cc84qPMU.o
+ .data          0x0000000000000000        0x0 /tmp/cc84qPMU.o
+ .bss           0x0000000000000000        0x0 /tmp/cc84qPMU.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -4211,7 +4212,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /tmp/ccy2JFFN.o
+ .boot2         0x0000000010000000      0x100 /tmp/cc84qPMU.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -4277,11 +4278,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .text*)
  .text          0x00000000100002bc       0x98 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
  .text.timer_callback
-                0x0000000010000354       0x50 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
+                0x0000000010000354       0x18 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
                 0x0000000010000354                timer_callback
  .text.startup.main
-                0x00000000100003a4       0xdc CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
-                0x00000000100003a4                main
+                0x000000001000036c      0x114 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj
+                0x000000001000036c                main
  .text.clock_gettime
                 0x0000000010000480       0x3c CMakeFiles/pico_micro_ros_main.dir/pico_uart_transport.c.obj
                 0x0000000010000480                clock_gettime
@@ -7487,7 +7488,7 @@ LOAD CMakeFiles/pico_micro_ros_main.dir/home/ngochoan/micro_ros_ws/src/pico-sdk/
 LOAD CMakeFiles/pico_micro_ros_main.dir/home/ngochoan/micro_ros_ws/src/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj
 LOAD CMakeFiles/pico_micro_ros_main.dir/home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj
 LOAD /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a
-LOAD /tmp/ccy2JFFN.o
+LOAD /tmp/cc84qPMU.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -7865,7 +7866,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000001dbf       0x2b /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/libmicroros.a(librosidl_runtime_c-string_functions.c.obj)
  .ARM.attributes
-                0x0000000000001dea       0x22 /tmp/ccy2JFFN.o
+                0x0000000000001dea       0x22 /tmp/cc84qPMU.o
  .ARM.attributes
                 0x0000000000001e0c       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

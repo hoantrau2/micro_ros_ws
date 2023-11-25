@@ -161,3 +161,165 @@ int main()
 // ros2 topic echo /pico_publisher
 // ros2 node list
 #endif
+
+
+
+
+#ifdef CODE_ANH_TRI_SP
+#include "pico/stdlib.h"
+#include "pico_uart_transports.h"
+#include <rcl/error_handling.h>
+#include <rcl/rcl.h>
+#include <rclc/executor.h>
+#include <rclc/rclc.h>
+#include <rmw_microros/rmw_microros.h>
+#include <std_msgs/msg/float64_multi_array.h>
+#include <stdio.h>
+#define NUM_SENSOR 4
+#define PUBLISHER
+
+#ifdef PUBLISHER
+#define NUM_SENSOR 4
+rcl_publisher_t publisher;
+std_msgs__msg__Float64MultiArray data_sensor;
+
+// Initialize timer_callback funtion
+void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
+  rcl_ret_t ret = rcl_publish(&publisher, &data_sensor, NULL);
+}
+
+int main() {
+  stdio_init_all();
+
+  // double voltage = 10.0005;
+  // double angular_pich = 20.002;
+  // double encoder = 30.003;
+  // double error = 0.00;
+
+  // // Initialize data transfer
+  // //   data_sensor.size = NUM_SENSOR;
+  // //   data_sensor.capacity = NUM_SENSOR;
+  // //   data_sensor.data[0].data = voltage;
+  // //   data_sensor.data[1].data = angular_pich;
+  // //   data_sensor.data[2].data = encoder;
+  // //   data_sensor.data[3].data = error;
+
+  data_sensor.data.capacity = NUM_SENSOR;
+  data_sensor.data.size = NUM_SENSOR;
+  data_sensor.data.data =
+      (int64_t *)malloc(data_sensor.data.capacity * sizeof(double));
+
+  double voltage = 10.0005;
+  double angular_pich = 20.002;
+  double encoder = 30.003;
+  double error = 0.00;
+
+  data_sensor.data.data[0] = voltage;
+  data_sensor.data.data[1] = angular_pich;
+  data_sensor.data.data[2] = encoder;
+  data_sensor.data.data[3] = error;
+  // data_sensor.layout.dim.capacity = 1;
+  // data_sensor.layout.dim.size = 1;
+  // data_sensor.layout.dim.data = (std_msgs__msg__MultiArrayDimension *)malloc(
+  //     data_sensor.layout.dim.capacity *
+  //     sizeof(std_msgs__msg__MultiArrayDimension));
+
+  // for (size_t i = 0; i < data_sensor.layout.dim.capacity; i++) {
+  //   data_sensor.layout.dim.data[i].label.capacity = 20;
+  //   data_sensor.layout.dim.data[i].label.size = 0;
+  //   data_sensor.layout.dim.data[i].label.data = (char *)malloc(
+  //       data_sensor.layout.dim.data[i].label.capacity * sizeof(char));
+  // }
+  // data_sensor.data.data[0] = voltage;
+  // data_sensor.data.data[1] = angular_pich;
+  // data_sensor.data.data[2] = encoder;
+  // data_sensor.data.data[3] = error;
+
+  // Set up Micro-ROS serial transport
+  rmw_uros_set_custom_transport(
+      true, NULL, pico_serial_transport_open, pico_serial_transport_close,
+      pico_serial_transport_write, pico_serial_transport_read);
+
+  // Initialize the Node and Micro-ROS support
+  rclc_support_t support;
+  rcl_allocator_t allocator;
+  allocator = rcl_get_default_allocator();
+  rclc_support_init(&support, 0, NULL, &allocator);
+
+  // Initialize Node
+  rcl_node_t node;
+  rclc_node_init_default(&node, "pico_node", "", &support);
+
+  // Initialize Timer_Interrupt
+  rcl_timer_t timer;
+  const int timeout_ms = 1000;
+  const uint8_t attempts = 120;
+  rcl_ret_t ret = rmw_uros_ping_agent(timeout_ms, attempts);
+  if (ret != RCL_RET_OK) {
+    return ret;
+  }
+  rclc_timer_init_default(&timer, &support, RCL_MS_TO_NS(1000), timer_callback);
+
+  // Initialize Publisher
+  rclc_publisher_init_default(
+      &publisher, &node,
+      ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Float64MultiArray),
+      "transfer_to_pico_topic");
+
+  // Create executor
+  rclc_executor_t executor;
+  rclc_executor_init(&executor, &support.context, 1, &allocator);
+  rclc_executor_add_timer(&executor, &timer);
+
+  while (true) {
+    rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
+  }
+  return 0;
+}
+#endif
+
+
+// ben linux
+#include <chrono>
+#include <functional>
+#include <memory>
+#include <string>
+#include "rclcpp/rclcpp.hpp"
+#include "std_msgs/msg/float64_multi_array.hpp"
+#include "std_msgs/msg/string.hpp"
+
+using std::placeholders::_1;
+
+class MinimalSubscriber : public rclcpp::Node {
+public:
+  MinimalSubscriber() : Node("minimal_subscriber") {
+    subscription_ = this->create_subscription<std_msgs::msg::Float64MultiArray>(
+        "transfer_to_pico_topic", 10,
+        std::bind(&MinimalSubscriber::topic_callback, this, _1));
+  }
+
+private:
+  void
+  topic_callback(const std_msgs::msg::Float64MultiArray::SharedPtr msg) const {
+     RCLCPP_INFO(this->get_logger(), "Data1: %lf",msg->data[0]);
+     RCLCPP_INFO(this->get_logger(), "Data2: %lf",msg->data[1]);
+     RCLCPP_INFO(this->get_logger(), "Data3: %lf",msg->data[2]);
+     RCLCPP_INFO(this->get_logger(), "Data4: %lf",msg->data[3]);
+     
+    // std::cout << "Data 1: " << msg->data[0] << std::endl;
+    // std::cout << "Data 2: " << msg->data[1] << std::endl;
+    // std::cout << "Data 3: " << msg->data[2] << std::endl;
+    // std::cout << "Data 4: " << msg->data[3] << std::endl;
+  }
+  rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr
+      subscription_;
+};
+
+int main(int argc, char *argv[]) {
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<MinimalSubscriber>());
+  rclcpp::shutdown();
+  return 0;
+}
+
+#endif
