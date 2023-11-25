@@ -41,6 +41,8 @@
     "thread": "c",
     "*.txx": "c",
     "float64.h": "c",
-    "float64__functions.h": "c"
+    "float64__functions.h": "c",
+    "float64__struct.h": "c",
+    "float64_multi_array.h": "c"
   }
 }

@@ -141,3 +141,129 @@ int main()
 // sudo micro-ros-agent serial --dev /dev/ttyACM0 baudrate=115200
 
 #endif
+
+#ifdef PUBLISHER_STRING
+#define NUM_SENSOR 4
+rcl_publisher_t publisher;
+std_msgs__msg__Float64 values[NUM_SENSOR];
+std_msgs__msg__String Hoan;
+
+// Initialize timer_callback funtion
+void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
+    rcl_ret_t ret = rcl_publish(&publisher, &Hoan, NULL);
+}
+
+int main() {
+    stdio_init_all();
+    double voltage = 10.0005;
+    double angular_pich = 20.002;
+    double encoder = 30.003;
+    double error = 0.00;
+
+    // Initialize data transfer
+    values[0].data = voltage;
+    values[1].data = angular_pich;
+    values[2].data = encoder;
+    values[3].data = error;
+
+    // Set up Micro-ROS serial transport
+    rmw_uros_set_custom_transport(
+        true, NULL, pico_serial_transport_open, pico_serial_transport_close,
+        pico_serial_transport_write, pico_serial_transport_read);
+
+    // Initialize the Node and Micro-ROS support
+    rclc_support_t support;
+    rcl_allocator_t allocator;
+    allocator = rcl_get_default_allocator();
+    rclc_support_init(&support, 0, NULL, &allocator);
+
+    // Initialize Node
+    rcl_node_t node;
+    rclc_node_init_default(&node, "pico_node", "", &support);
+
+    // Initialize Timer_Interrupt
+    rcl_timer_t timer;
+    const int timeout_ms = 1000;
+    const uint8_t attempts = 120;
+    rcl_ret_t ret = rmw_uros_ping_agent(timeout_ms, attempts);
+    if (ret != RCL_RET_OK) {
+        return ret;
+    }
+    rclc_timer_init_default(&timer, &support, RCL_MS_TO_NS(1000), timer_callback);
+
+    // Initialize Publisher
+    rclc_publisher_init_default(
+        &publisher, &node, ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
+        "pico_publisher_topic");
+
+    // Initialize the string message
+    Hoan.data.data = "ros2 hello";
+    Hoan.data.size = strlen(Hoan.data.data);
+
+    // Create executor
+    rclc_executor_t executor;
+    rclc_executor_init(&executor, &support.context, 1, &allocator);
+    rclc_executor_add_timer(&executor, &timer);
+
+    while (true) {
+        rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
+    }
+    return 0;
+}
+
+
+#include <memory>
+#include <functional>
+#include "rclcpp/rclcpp.hpp"
+#include "tutorial_interfaces/msg/float64.hpp"
+
+using std::placeholders::_1;
+
+class MinimalSubscriber : public rclcpp::Node
+{
+public:
+  MinimalSubscriber()  : Node("read_data_picoW_node")
+  {
+    // Ensure that the necessary header is included
+    subscription_ = this->create_subscription<tutorial_interfaces::msg::MyInterface>(
+     "transfer_to_pico_topic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+
+    if (subscription_ == nullptr) {
+      // Check if subscription creation failed
+      RCLCPP_ERROR(this->get_logger(), "Failed to create subscription.");
+    }
+  }
+
+private:
+  // Fix the type and add a default value for msg.data
+  void topic_callback(const tutorial_interfaces::msg::MyInterface::SharedPtr msg) const
+  {
+    if (msg != nullptr) {
+      // Use msg->data instead of msg.data
+      RCLCPP_INFO(this->get_logger(), "I heard: '%s'", msg->first_data.c_str());
+      RCLCPP_INFO(this->get_logger(), "I heard: '%lf'", msg->data);
+
+    } else {
+      RCLCPP_ERROR(this->get_logger(), "Received null message");
+    }
+  }
+  rclcpp::Subscription<tutorial_interfaces::msg::MyInterface>::SharedPtr subscription_;
+};
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+
+  auto node = std::make_shared<MinimalSubscriber>();
+
+  // Check if the node is successfully created
+  if (node != nullptr) {
+    rclcpp::spin(node);
+  } else {
+    RCLCPP_ERROR(rclcpp::get_logger("main"), "Failed to create node");
+  }
+
+  rclcpp::shutdown();
+  return 0;
+}
+#endif
