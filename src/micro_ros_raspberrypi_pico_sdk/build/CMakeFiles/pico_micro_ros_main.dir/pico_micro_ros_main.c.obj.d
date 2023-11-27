@@ -1,52 +1,11 @@
 CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/pico_micro_ros_main.c \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/assert.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
- /usr/include/newlib/assert.h /usr/include/newlib/_ansi.h \
+ /usr/include/newlib/stdio.h /usr/include/newlib/_ansi.h \
  /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
  /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
- /usr/include/newlib/sys/features.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
- /usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/generated/pico_base/pico/version.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/config.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/generated/pico_base/pico/config_autogen.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/boards/include/boards/pico.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
- /usr/include/newlib/sys/cdefs.h \
+ /usr/include/newlib/sys/features.h /usr/include/newlib/sys/cdefs.h \
  /usr/include/newlib/machine/_default_types.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/error.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_time/include/pico/time.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/pico_uart_transports.h \
- /usr/include/newlib/stdio.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stddef.h \
  /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h \
  /usr/include/newlib/sys/reent.h /usr/include/newlib/_ansi.h \
  /usr/include/newlib/sys/_types.h /usr/include/newlib/machine/_types.h \
@@ -57,30 +16,19 @@ CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /usr/include/newlib/sys/timespec.h /usr/include/newlib/sys/_timespec.h \
  /usr/include/newlib/sys/_pthreadtypes.h /usr/include/newlib/sys/sched.h \
  /usr/include/newlib/machine/types.h /usr/include/newlib/sys/stdio.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/core/communication/communication.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/config.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/visibility.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/error_handling.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/error_handling.h \
- /usr/include/newlib/stdlib.h /usr/include/newlib/machine/stdlib.h \
- /usr/include/newlib/alloca.h /usr/include/newlib/string.h \
- /usr/include/newlib/sys/_locale.h /usr/include/newlib/strings.h \
- /usr/include/newlib/sys/string.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/rcl.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/init.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/allocator.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/allocator.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/macros.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/configuration_flags.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/types/rcutils_ret.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/visibility_control.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/visibility_control_macros.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/snprintf.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/testing/fault_injection.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/rcl.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/init.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/allocator.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/context.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/init.h \
+ /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/init_options.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/discovery_options.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/macros.h \
@@ -94,6 +42,13 @@ CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/types.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/types.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/logging.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/error_handling.h \
+ /usr/include/newlib/assert.h /usr/include/newlib/stdlib.h \
+ /usr/include/newlib/machine/stdlib.h /usr/include/newlib/alloca.h \
+ /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
+ /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/snprintf.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/testing/fault_injection.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/time.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/types.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/types/array_list.h \
@@ -178,10 +133,17 @@ CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/qos_profiles.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/subscription_options.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/event.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/executor.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/logging_macros.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/executor_handle.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl/error_handling.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/rclc.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/init.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/types.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/visibility_control.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/node.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/publisher.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/subscription.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/timer.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/client.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/service.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/action_client.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl_action/rcl_action.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl_action/action_client.h \
@@ -216,20 +178,28 @@ CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/topic_endpoint_info_array.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw/topic_endpoint_info.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcl_action/wait.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/types.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/action_goal_handle.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/action_server.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/executor.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rcutils/logging_macros.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/executor_handle.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/sleep.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/rclc.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/init.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/node.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/publisher.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/subscription.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/timer.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/client.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rclc/service.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/int32.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/int32__struct.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/int32__functions.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/rosidl_generator_c__visibility_control.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/int32__type_support.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/float64.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64__struct.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64__functions.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64__type_support.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/string.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/string__struct.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/string__functions.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/string__type_support.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/rmw_microros.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microxrcedds_c/config.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/config.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/continous_serialization.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/ucdr/microcdr.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/ucdr/visibility.h \
@@ -237,13 +207,47 @@ CMakeFiles/pico_micro_ros_main.dir/pico_micro_ros_main.c.obj: \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/init_options.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/time_sync.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/util/time.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/visibility.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/ping.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/profile/transport/custom/custom_transport.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/core/communication/communication.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/uxr/client/profile/transport/stream_framing/stream_framing_protocol.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/timing.h \
  /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/rmw_microros/custom_transport.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/float64_multi_array.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64_multi_array__struct.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/multi_array_layout__struct.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/multi_array_dimension__struct.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64_multi_array__functions.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/rosidl_generator_c__visibility_control.h \
- /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/libmicroros/include/std_msgs/msg/detail/float64_multi_array__type_support.h
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/assert.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/generated/pico_base/pico/version.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/config.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/generated/pico_base/pico/config_autogen.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/boards/include/boards/pico.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/types.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_base/include/pico/error.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /home/ngochoan/micro_ros_ws/src/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/pico_uart_transports.h
