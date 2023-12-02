@@ -43,6 +43,9 @@
     "float64.h": "c",
     "float64__functions.h": "c",
     "float64__struct.h": "c",
-    "float64_multi_array.h": "c"
+    "float64_multi_array.h": "c",
+    "stdio.h": "c",
+    "twist__struct.h": "c",
+    "twist.h": "c"
   }
 }
