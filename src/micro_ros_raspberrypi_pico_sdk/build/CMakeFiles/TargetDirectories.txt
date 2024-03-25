@@ -1,4 +1,4 @@
-/home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/CMakeFiles/pico_micro_ros_main.dir
+/home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/CMakeFiles/pico_w_node.dir
 /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/CMakeFiles/ELF2UF2Build.dir
 /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/CMakeFiles/edit_cache.dir
 /home/ngochoan/micro_ros_ws/src/micro_ros_raspberrypi_pico_sdk/build/CMakeFiles/rebuild_cache.dir
