@@ -19,19 +19,38 @@ NodeComponents node_components;
 
 std_msgs__msg__Float64MultiArray angular_velocity_motor;
 
+double motor1 = 10.0005;
+double motor2 = 20.002;
+double motor3 = 30.003;
+double motor4 = 0.020;
+
 // Initialize timer_callback funtion
 void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
-  // rcl_ret_t ret =
-  rcl_publish(&node_components.publisher, &angular_velocity_motor, NULL);
+  angular_velocity_motor.data.capacity = ANGULAR_VELOCITY;
+  angular_velocity_motor.data.size = ANGULAR_VELOCITY;
+  angular_velocity_motor.layout.data_offset = 222;
+  angular_velocity_motor.data.data =
+      (double *)malloc(angular_velocity_motor.data.capacity * sizeof(double));
+  angular_velocity_motor.data.data[0] = motor1;
+  angular_velocity_motor.data.data[1] = motor2;
+  angular_velocity_motor.data.data[2] = motor3;
+  angular_velocity_motor.data.data[3] = motor4;
+  rcl_ret_t ret =
+      rcl_publish(&node_components.publisher, &angular_velocity_motor, NULL);
 }
+
 // Initialize subscription_callback funtion
 void subscription_callback(const void *msgin) {
   const std_msgs__msg__Float64MultiArray *msg =
       (const std_msgs__msg__Float64MultiArray *)msgin;
-  printf("\n Received motor 1: %f", msg->data.data[0]);
-  printf("\n Received motor 2: %f", msg->data.data[1]);
-  printf("\n Received motor 3: %f", msg->data.data[2]);
-  printf("\n Received motor 4: %f", msg->data.data[3]);
+  if (msg->layout.data_offset == 333) {
+    // angular_velocity_motor.data.data[0] = msg->data.data[0];
+    // angular_velocity_motor.data.data[1] = msg->data.data[1];
+    // angular_velocity_motor.data.data[2] = msg->data.data[2];
+    // angular_velocity_motor.data.data[3] = msg->data.data[3];
+    // Process data here
+    printf("Received desired angle data\n");
+  }
 }
 
 // Cleanup function to free allocated memory
@@ -45,20 +64,6 @@ void cleanup() {
 
 int main() {
   stdio_init_all();
-  angular_velocity_motor.data.capacity = ANGULAR_VELOCITY;
-  angular_velocity_motor.data.size = ANGULAR_VELOCITY;
-  angular_velocity_motor.data.data =
-      (int64_t *)malloc(angular_velocity_motor.data.capacity * sizeof(double));
-
-  double motor1 = 10.0005;
-  double motor2 = 20.002;
-  double motor3 = 30.003;
-  double motor4 = 0.020;
-
-  angular_velocity_motor.data.data[0] = motor1;
-  angular_velocity_motor.data.data[1] = motor2;
-  angular_velocity_motor.data.data[2] = motor3;
-  angular_velocity_motor.data.data[3] = motor4;
 
   // Set up Micro-ROS serial transport
   rmw_uros_set_custom_transport(
@@ -85,6 +90,7 @@ int main() {
   if (ret != RCL_RET_OK) {
     return ret;
   }
+
   // RCL_MS_TO_NS(100) ms is the interupt timer
   rclc_timer_init_default(&timer, &support, RCL_MS_TO_NS(100), timer_callback);
 
