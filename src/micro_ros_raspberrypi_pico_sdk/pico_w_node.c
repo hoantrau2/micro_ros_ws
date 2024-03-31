@@ -1,3 +1,12 @@
+/**
+ * @file pico_w_node.cpp
+ * @author Hoan Duong & Hien Nguyen
+ * @brief the pico w node of my thesis at my university, Ho Chi Minh University
+ * of Technology.
+ * @version 1
+ * @date 2024-03-31
+ */
+
 #include "pico/stdlib.h"
 #include "pico_uart_transports.h"
 #include <rcl/error_handling.h>
@@ -28,7 +37,7 @@ double motor4 = 0.020;
 void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
   angular_velocity_motor.data.capacity = ANGULAR_VELOCITY;
   angular_velocity_motor.data.size = ANGULAR_VELOCITY;
-  angular_velocity_motor.layout.data_offset = 222;
+  angular_velocity_motor.layout.data_offstimeet = 222;
   angular_velocity_motor.data.data =
       (double *)malloc(angular_velocity_motor.data.capacity * sizeof(double));
   angular_velocity_motor.data.data[0] = motor1;
@@ -43,7 +52,7 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time) {
 void subscription_callback(const void *msgin) {
   const std_msgs__msg__Float64MultiArray *msg =
       (const std_msgs__msg__Float64MultiArray *)msgin;
-  if (msg->layout.data_offset == 333) {
+  if (msg->layout.data_offset == 111) {
     // angular_velocity_motor.data.data[0] = msg->data.data[0];
     // angular_velocity_motor.data.data[1] = msg->data.data[1];
     // angular_velocity_motor.data.data[2] = msg->data.data[2];
@@ -64,7 +73,6 @@ void cleanup() {
 
 int main() {
   stdio_init_all();
-
   // Set up Micro-ROS serial transport
   rmw_uros_set_custom_transport(
       true, NULL, pico_serial_transport_open, pico_serial_transport_close,
